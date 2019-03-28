@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.etoak.mapper.DictMapper">
+
+	<select id="queryDictList" parameterType="string" resultType="dict">
+		SELECT id, 
+		       dict_name AS dictName
+		  FROM t_springmvc_dict
+		 WHERE dict_group = #{dictGroup} 
+		 ORDER BY sort ASC
+	</select>
+
+</mapper>
